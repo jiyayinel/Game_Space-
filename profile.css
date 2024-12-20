@@ -1,0 +1,255 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #000000, #8e44ad);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.cover-photo {
+    width: 100%;
+    height: 315px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)), url('IMG/cover pot.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px;
+    margin-top: -60px;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-right: 20px;
+    border: 3px solid #8e44ad;
+    position: relative;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.level-indicator {
+    width: 40px;
+    height: 40px;
+    background-color: #8e44ad;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    margin-left: 10px;
+    color: white;
+}
+
+.profile-actions {
+    margin-top: 10px;
+}
+
+.action-button {
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.9em;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #6a2e8b;
+}
+
+.recent-games {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #231324;
+    border-radius: 8px;
+    flex-grow: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.recent-games h3 {
+    font-size: 1.6em;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.game-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #000000;
+    background-color: #333;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.game-container:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+.game-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.game-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 8px;
+    z-index: 1;
+    transition: opacity 0.5s ease;
+}
+
+.game-container:hover .game-image {
+    opacity: 0.5;
+}
+
+.game-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    max-width: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+.game-container:hover .game-details {
+    opacity: 1;
+}
+
+.game-details h4 {
+    font-size: 1.2em;
+    color: #8e44ad;
+    margin-bottom: 10px;
+}
+
+.game-details p {
+    font-size: 0.85em;
+    margin-bottom: 5px;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1em;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer .logo-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 150px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.footer .logo-box img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.footer .about,
+.footer .privacy,
+.footer .contact {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.footer .copyright {
+    font-size: 0.9em;
+    color: #ddd;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .game-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .footer {
+        padding: 10px 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .about,
+    .footer .privacy,
+    .footer .contact {
+        padding: 10px 0;
+    }
+
+    .footer .logo-box {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
